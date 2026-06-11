@@ -1,0 +1,63 @@
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1a1c29 0%, #282b42 100%); /* Красивый темный фон */
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            user-select: none; /* Запрещает синее выделение текста при частых кликах */
+            -webkit-user-select: none;
+        }
+
+        /* 2. Контейнер, который держит кнопку и счетчик вместе */
+        .clicker-container {
+            display: flex;
+            flex-direction: column-reverse; /* Меняет местами: счетчик будет СВЕРХУ, кнопка СНИЗУ */
+            align-items: center;
+            gap: 30px; /* Отступ между кнопкой и счетчиком */
+        }
+
+        /* 3. Стильное оформление вашей кнопки */
+        button {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* Делаем кнопку круглой */
+            border: none;
+            background: linear-gradient(145deg, #00f2fe, #4facfe); /* Неоново-синий градиент */
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+            
+            /* Эффект объема (3D-грань кнопки) */
+            box-shadow: 0 8px 0 #0081bf, 
+                        0 15px 25px rgba(79, 172, 254, 0.4);
+            
+            /* Плавность анимации */
+            transition: transform 0.05s ease, box-shadow 0.05s ease;
+        }
+
+        /* Эффект при наведении мыши */
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 0 #0081bf, 
+                        0 20px 30px rgba(79, 172, 254, 0.5);
+        }
+
+        /* Эффект физического клика (кнопка утапливается вниз) */
+        button:active {
+            transform: translateY(6px); /* Смещаем вниз на высоту грани */
+            box-shadow: 0 2px 0 #0081bf, 
+                        0 5px 10px rgba(79, 172, 254, 0.2);
+        }
+
+        /* 4. Красивое оформление вашего счетчика */
+        #counter {
+            font-size: 54px;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
